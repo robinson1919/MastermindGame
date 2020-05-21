@@ -160,7 +160,7 @@
       </b-modal>
 
       <b-modal ref="winMod" id="modal-2" v-model="modalWIn" class="text-center" title="Congratulations">
-        <h3>You have already whon the game</h3>
+        <h3>You have already won the game</h3>
       </b-modal>
 
       
@@ -634,55 +634,120 @@ export default {
         }   
         // --------------------------------------------------------------
       
-      
+        
+        
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
             if (x == el){
 
-              var arr = [];
+              
               arr.push(x);
-              var index = '';
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l1.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l2.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l1.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l1.classList.add("yellow");
+                  this.$refs.l2.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l1.classList.add("yellow");
+                  this.$refs.l2.classList.add("yellow");
+                  this.$refs.l3.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l3.classList.add("yellow");
+                case 4:
+                  this.$refs.l1.classList.add("yellow");
+                  this.$refs.l2.classList.add("yellow");
+                  this.$refs.l3.classList.add("yellow");
+                  this.$refs.l4.classList.add("yellow");
+                  break;
+
               }
 
-              if(index == 3) {
-                this.$refs.l4.classList.add("yellow");
-              }
+              //  Codigo anterior con colores ordenados por posicion
+        
+              // var index = '';
+              // var index = this.validationArr.indexOf(x);
 
-              
-              
+              // if(index == 0){
+              //   this.$refs.l1.classList.add("yellow");
+              // }
+                  
+              // if (index == 1){
+              //   this.$refs.l2.classList.add("yellow");
+              // }
+                
+              // if(index == 2) {
+              //   this.$refs.l3.classList.add("yellow");
+              // }
+
+              // if(index == 3) {
+              //   this.$refs.l4.classList.add("yellow");
+              // }
+
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l1
-          this.$refs.l1.classList.add("black");
+
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l1.classList.add("black");
+                break;
+
+              case 2:
+                this.$refs.l1.classList.add("black");
+                this.$refs.l2.classList.add("black");
+                break;
+
+              case 3:
+                this.$refs.l1.classList.add("black");
+                this.$refs.l2.classList.add("black");
+                this.$refs.l3.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l1.classList.add("black");
+                this.$refs.l2.classList.add("black");
+                this.$refs.l3.classList.add("black");
+                this.$refs.l4.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l2.classList.add("black");
-        }
+        // Previous code with color ordered by columns
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l3.classList.add("black");
-        }
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l4.classList.add("black");
-        }
+        // if (this.validationArr[0] == this.opt[0]){
+        //   this.$refs.l1.classList.add("black");
+        // }
+
+        // if (this.validationArr[1] == this.opt[1]){
+        //   this.$refs.l2.classList.add("black");
+        // }
+
+        // if (this.validationArr[2] == this.opt[2]){
+        //   this.$refs.l3.classList.add("black");
+        // }
+
+        // if (this.validationArr[3] == this.opt[3]){
+        //   this.$refs.l4.classList.add("black");
+        // }
 
         // check if player won 
 
@@ -711,50 +776,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = '';
-              index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l5.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l6.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l5.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l5.classList.add("yellow");
+                  this.$refs.l6.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l5.classList.add("yellow");
+                  this.$refs.l6.classList.add("yellow");
+                  this.$refs.l7.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l7.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l5.classList.add("yellow");
+                  this.$refs.l6.classList.add("yellow");
+                  this.$refs.l7.classList.add("yellow");
+                  this.$refs.l8.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l8.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l5.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l6.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l5.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l7.classList.add("black");
-        }
+              case 2:
+                this.$refs.l5.classList.add("black");
+                this.$refs.l6.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l8.classList.add("black");
+              case 3:
+                this.$refs.l5.classList.add("black");
+                this.$refs.l6.classList.add("black");
+                this.$refs.l7.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l5.classList.add("black");
+                this.$refs.l6.classList.add("black");
+                this.$refs.l7.classList.add("black");
+                this.$refs.l8.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
         // check if player won 
@@ -783,49 +872,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l9.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l10.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l9.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l9.classList.add("yellow");
+                  this.$refs.l10.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l9.classList.add("yellow");
+                  this.$refs.l10.classList.add("yellow");
+                  this.$refs.l11.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l11.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l9.classList.add("yellow");
+                  this.$refs.l10.classList.add("yellow");
+                  this.$refs.l11.classList.add("yellow");
+                  this.$refs.l12.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l12.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l9.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l10.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l9.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l11.classList.add("black");
-        }
+              case 2:
+                this.$refs.l9.classList.add("black");
+                this.$refs.l10.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l12.classList.add("black");
+              case 3:
+                this.$refs.l9.classList.add("black");
+                this.$refs.l10.classList.add("black");
+                this.$refs.l11.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l9.classList.add("black");
+                this.$refs.l10.classList.add("black");
+                this.$refs.l11.classList.add("black");
+                this.$refs.l12.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
         // check if player won 
@@ -833,6 +947,8 @@ export default {
         if(this.validationArr[0] == this.opt[0] && this.validationArr[1] == this.opt[1] && this.validationArr[2] == this.opt[2] && this.validationArr[3] == this.opt[3]){
           this.modalWIn = true;
         }
+
+        this.validationArr = [];
       }
       // -----------------------------------------------------
 
@@ -856,49 +972,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l13.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l14.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l13.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l13.classList.add("yellow");
+                  this.$refs.l14.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l13.classList.add("yellow");
+                  this.$refs.l14.classList.add("yellow");
+                  this.$refs.l15.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l15.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l13.classList.add("yellow");
+                  this.$refs.l14.classList.add("yellow");
+                  this.$refs.l15.classList.add("yellow");
+                  this.$refs.l16.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l16.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l13.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l14.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l13.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l15.classList.add("black");
-        }
+              case 2:
+                this.$refs.l13.classList.add("black");
+                this.$refs.l14.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l16.classList.add("black");
+              case 3:
+                this.$refs.l13.classList.add("black");
+                this.$refs.l14.classList.add("black");
+                this.$refs.l15.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l13.classList.add("black");
+                this.$refs.l14.classList.add("black");
+                this.$refs.l15.classList.add("black");
+                this.$refs.l16.classList.add("black");
+                break;
+
+            }
+          }     
+          
         }
 
         // check if player won 
@@ -906,6 +1047,8 @@ export default {
         if(this.validationArr[0] == this.opt[0] && this.validationArr[1] == this.opt[1] && this.validationArr[2] == this.opt[2] && this.validationArr[3] == this.opt[3]){
           this.modalWIn = true;
         }
+
+        this.validationArr = [];
       }
       // -----------------------------------------------------
 
@@ -927,49 +1070,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l17.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l18.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l17.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l17.classList.add("yellow");
+                  this.$refs.l18.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l17.classList.add("yellow");
+                  this.$refs.l18.classList.add("yellow");
+                  this.$refs.l19.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l19.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l17.classList.add("yellow");
+                  this.$refs.l18.classList.add("yellow");
+                  this.$refs.l19.classList.add("yellow");
+                  this.$refs.l20.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l20.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l17.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l18.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l17.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l19.classList.add("black");
-        }
+              case 2:
+                this.$refs.l17.classList.add("black");
+                this.$refs.l18.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l20.classList.add("black");
+              case 3:
+                this.$refs.l17.classList.add("black");
+                this.$refs.l18.classList.add("black");
+                this.$refs.l19.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l17.classList.add("black");
+                this.$refs.l18.classList.add("black");
+                this.$refs.l19.classList.add("black");
+                this.$refs.l20.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
         // check if player won 
@@ -977,6 +1145,8 @@ export default {
         if(this.validationArr[0] == this.opt[0] && this.validationArr[1] == this.opt[1] && this.validationArr[2] == this.opt[2] && this.validationArr[3] == this.opt[3]){
           this.modalWIn = true;
         }
+
+        this.validationArr = [];
       }
       // -----------------------------------------------------
 
@@ -998,49 +1168,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l21.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l22.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l21.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l21.classList.add("yellow");
+                  this.$refs.l22.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l21.classList.add("yellow");
+                  this.$refs.l22.classList.add("yellow");
+                  this.$refs.l23.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l23.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l21.classList.add("yellow");
+                  this.$refs.l22.classList.add("yellow");
+                  this.$refs.l23.classList.add("yellow");
+                  this.$refs.l24.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l24.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l21.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l22.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l21.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l23.classList.add("black");
-        }
+              case 2:
+                this.$refs.l22.classList.add("black");
+                this.$refs.l23.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l24.classList.add("black");
+              case 3:
+                this.$refs.l21.classList.add("black");
+                this.$refs.l22.classList.add("black");
+                this.$refs.l23.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l21.classList.add("black");
+                this.$refs.l22.classList.add("black");
+                this.$refs.l23.classList.add("black");
+                this.$refs.l24.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
         // check if player won 
@@ -1048,6 +1243,8 @@ export default {
         if(this.validationArr[0] == this.opt[0] && this.validationArr[1] == this.opt[1] && this.validationArr[2] == this.opt[2] && this.validationArr[3] == this.opt[3]){
           this.modalWIn = true;
         }
+
+        this.validationArr = [];
       }
       // -----------------------------------------------------
 
@@ -1069,49 +1266,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l25.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l26.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l25.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l25.classList.add("yellow");
+                  this.$refs.l26.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l25.classList.add("yellow");
+                  this.$refs.l26.classList.add("yellow");
+                  this.$refs.l27.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l27.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l25.classList.add("yellow");
+                  this.$refs.l26.classList.add("yellow");
+                  this.$refs.l27.classList.add("yellow");
+                  this.$refs.l28.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l28.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l25.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l26.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l25.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l27.classList.add("black");
-        }
+              case 2:
+                this.$refs.l25.classList.add("black");
+                this.$refs.l26.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l28.classList.add("black");
+              case 3:
+                this.$refs.l25.classList.add("black");
+                this.$refs.l26.classList.add("black");
+                this.$refs.l27.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l25.classList.add("black");
+                this.$refs.l26.classList.add("black");
+                this.$refs.l27.classList.add("black");
+                this.$refs.l28.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
         // check if player won 
@@ -1119,6 +1341,8 @@ export default {
         if(this.validationArr[0] == this.opt[0] && this.validationArr[1] == this.opt[1] && this.validationArr[2] == this.opt[2] && this.validationArr[3] == this.opt[3]){
           this.modalWIn = true;
         }
+
+        this.validationArr = [];
       }
       // -----------------------------------------------------
     },
@@ -1139,49 +1363,74 @@ export default {
         // --------------------------------------------------------------
       
       
+        var arr = [];
         this.validationArr.forEach((x)=>{          
           this.opt.forEach((el) => {
-            if (x == el){
-
-              var arr = [];
+            if (x == el){              
               arr.push(x);
-              var index = this.validationArr.indexOf(x);
 
-              if(index == 0){
-                this.$refs.l29.classList.add("yellow");
-              }
-                  
-              if (index == 1){
-                this.$refs.l30.classList.add("yellow");
-              }
+              switch (arr.length){
+                case 1:
+                  this.$refs.l29.classList.add("yellow");
+                  break;
+
+                case 2:
+                  this.$refs.l29.classList.add("yellow");
+                  this.$refs.l30.classList.add("yellow");
+                  break;
+
+                case 3:
+                  this.$refs.l29.classList.add("yellow");
+                  this.$refs.l30.classList.add("yellow");
+                  this.$refs.l31.classList.add("yellow");
+                  break;
                 
-              if(index == 2) {
-                this.$refs.l31.classList.add("yellow");
-              }
+                case 4:
+                  this.$refs.l29.classList.add("yellow");
+                  this.$refs.l30.classList.add("yellow");
+                  this.$refs.l31.classList.add("yellow");
+                  this.$refs.l32.classList.add("yellow");
+                  break;
 
-              if(index == 3) {
-                this.$refs.l32.classList.add("yellow");
-              }               
-              
+              }
             }
           })
         })
 
         
-        if (this.validationArr[0] == this.opt[0]){
-          this.$refs.l29.classList.add("black");
-        }
 
-        if (this.validationArr[1] == this.opt[1]){
-          this.$refs.l30.classList.add("black");
-        }
+        var newArr = [];
+        for (let i = 0; i < this.validationArr.length; i++) {
+          if(this.validationArr[i] == this.opt[i]){
+            newArr.push(this.validationArr[i])
+            
+            
+            switch (newArr.length){
+              case 1:
+                this.$refs.l29.classList.add("black");
+                break;
 
-        if (this.validationArr[2] == this.opt[2]){
-          this.$refs.l31.classList.add("black");
-        }
+              case 2:
+                this.$refs.l29.classList.add("black");
+                this.$refs.l30.classList.add("black");
+                break;
 
-        if (this.validationArr[3] == this.opt[3]){
-          this.$refs.l32.classList.add("black");
+              case 3:
+                this.$refs.l29.classList.add("black");
+                this.$refs.l30.classList.add("black");
+                this.$refs.l31.classList.add("black");
+                break;
+              
+              case 4:
+                this.$refs.l29.classList.add("black");
+                this.$refs.l30.classList.add("black");
+                this.$refs.l31.classList.add("black");
+                this.$refs.l32.classList.add("black");
+                break;
+
+              }
+          }     
+          
         }
 
         // check if player won 
@@ -1189,6 +1438,8 @@ export default {
         if(this.validationArr[0] == this.opt[0] && this.validationArr[1] == this.opt[1] && this.validationArr[2] == this.opt[2] && this.validationArr[3] == this.opt[3]){
           this.modalWIn = true;
         }
+
+        this.validationArr = [];
       }
       // -----------------------------------------------------
     }
